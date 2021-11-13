@@ -27,3 +27,8 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/.devcontainer/Dockerfile'
         tags: |
           $(tag)
+- task: Docker@2
+  inputs:
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+    buildContext: 'tripinsights/api-poi'
